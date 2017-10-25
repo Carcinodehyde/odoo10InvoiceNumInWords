@@ -31,6 +31,6 @@ class AccountInvoice(models.Model):
 
 	@api.depends('amount_total')
 	def _computeInWords(self):
-		self.in_words = amount_to_text_en.amount_to_text(self.amount_total)
+		self.in_words = amount_to_text_en.amount_to_text(self.amount_total, currency='Dollars')
 
 	
